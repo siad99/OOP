@@ -1,0 +1,42 @@
+# Smartphone Class
+class Smartphone:
+    def __init__(self, brand, model, battery_level=100):
+        # Constructor to initialize a new smartphone object
+        self.brand = brand
+        self.model = model
+        self.battery_level = battery_level
+        self.is_on = False  # Initially the phone is off
+
+    def turn_on(self):
+        if not self.is_on:
+            self.is_on = True
+            print(f"{self.brand} {self.model} is now ON.")
+        else:
+            print(f"{self.brand} {self.model} is already ON.")
+
+    def turn_off(self):
+        if self.is_on:
+            self.is_on = False
+            print(f"{self.brand} {self.model} is now OFF.")
+        else:
+            print(f"{self.brand} {self.model} is already OFF.")
+    
+    def make_call(self, number):
+        if self.is_on:
+            print(f"Calling {number} from {self.brand} {self.model}...")
+        else:
+            print(f"{self.brand} {self.model} is OFF. Please turn it on to make a call.")
+    
+    def check_battery(self):
+        print(f"Battery level of {self.brand} {self.model}: {self.battery_level}%")
+        if self.battery_level < 20:
+            print("Warning: Battery is low! Please charge your phone.")
+        else:
+            print("Battery is sufficient.")
+
+# Creating an instance of Smartphone
+my_phone = Smartphone("Apple", "iPhone 14", battery_level=50)
+my_phone.turn_on()
+my_phone.check_battery()
+my_phone.make_call("555-1234")
+my_phone.turn_off()

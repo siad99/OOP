@@ -1,0 +1,40 @@
+# Base Animal Class
+class Animal:
+    def move(self):
+        pass  # This is a placeholder for the move method in subclasses
+
+# Dog Class inherits from Animal
+class Dog(Animal):
+    def move(self):
+        print("The dog is running.")
+
+# Fish Class inherits from Animal
+class Fish(Animal):
+    def move(self):
+        print("The fish is swimming.")
+
+# Bird Class inherits from Animal
+class Bird(Animal):
+    def move(self):
+        print("The bird is flying.")
+
+# Car Class (also inherits Animal, but could represent a vehicle)
+class Car(Animal):
+    def move(self):
+        print("The car is driving.")
+
+# Test Polymorphism
+def demonstrate_movement(animal):
+    animal.move()  # Calls the move() method specific to each animal
+
+# Creating objects of different classes
+dog = Dog()
+fish = Fish()
+bird = Bird()
+car = Car()
+
+# Demonstrate Polymorphism
+demonstrate_movement(dog)  # The dog is running
+demonstrate_movement(fish)  # The fish is swimming
+demonstrate_movement(bird)  # The bird is flying
+demonstrate_movement(car)   # The car is driving
